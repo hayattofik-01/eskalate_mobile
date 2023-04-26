@@ -33,7 +33,7 @@ class PostDisplay extends StatelessWidget {
                     ),
                     const Spacer(),
                     IconButton(
-  icon: Icon(Icons.view_sidebar),
+  icon: Icon(Icons.crop_square),
   onPressed: () {
     // Do something when the user presses the button
   },
@@ -91,19 +91,32 @@ class PostDisplay extends StatelessWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
-                                        Icon(Icons.favorite),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[Icon(Icons.thumb_up_alt_outlined, color: Colors.grey),SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.009),Text("2.1k",style:TextStyle(fontSize:12* MediaQuery.textScaleFactorOf(context),
+                                        fontWeight: FontWeight.w400))]),
                                         SizedBox(
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                0.1),
-                                        Icon(Icons.favorite),
+                                                0.04),
+                                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [Icon(Icons.access_time), SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.009),Text("1hr ago",style:TextStyle(fontSize:12* MediaQuery.textScaleFactorOf(context),
+                                        fontWeight: FontWeight.w400))]),
                                       SizedBox(
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                0.1),
-                                        Icon(Icons.favorite)
+                                                0.06),
+                                        Icon(Icons.bookmark,color:Color.fromARGB(255, 55, 145, 219))
                                       ],
                                     )
                                   ])
