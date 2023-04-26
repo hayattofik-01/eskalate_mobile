@@ -14,13 +14,13 @@ class PostDisplay extends StatelessWidget {
           ),
         ),
         width: MediaQuery.of(context).size.width * 1,
-        height: MediaQuery.of(context).size.height * 0.4305,
+        height: MediaQuery.of(context).size.height * 0.426,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(50, 30, 40, 0),
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(top: 2),
                 child: Row(
                   
                   children: [

@@ -56,102 +56,107 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(230,234,241,1),
-        body: SafeArea(
-      child:Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text("Profile",
-            style:TextStyle(
-              fontSize: 18,fontWeight:FontWeight.bold
-            )),
-            SizedBox(width: 30),
-            Icon(Icons.more_horiz)
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(35.0, 20.0, 35.0, 65.0),
-          child: Stack(
-            clipBehavior: Clip.none ,
-            children: [Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                child: Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height * 0.11,
-                                width: MediaQuery.of(context).size.width * 0.22,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      //<-- SEE HERE
-                                      width: MediaQuery.of(context).size.width * 0.007,
-                                      color: Color.fromARGB(255, 39, 176, 169)),
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(7.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image.network(
-                                        "https://media.istockphoto.com/photos/smiling-indian-man-looking-at-camera-picture-id1270067126?b=1&k=20&m=1270067126&s=612x612&w=0&h=tcabRaVlA0bsZhWCDBXxC1IYuGnh7_VuramO-vJ5jRs=",
-                                        fit: BoxFit.cover),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(230,234,241,1),
+          body: SafeArea(
+        child:Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02) ,
+                child: Text("Profile",
+                style:TextStyle(
+                  fontSize: 18 *  MediaQuery.textScaleFactorOf(context),fontWeight:FontWeight.w500
+                )),
+              ),
+              SizedBox(width: 30),
+              Icon(Icons.more_horiz)
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(35.0, 20.0, 35.0, 55.0),
+            child: Stack(
+              clipBehavior: Clip.none ,
+              children: [Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: MediaQuery.of(context).size.height * 0.11,
+                                  width: MediaQuery.of(context).size.width * 0.22,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        //<-- SEE HERE
+                                        width: MediaQuery.of(context).size.width * 0.007,
+                                        color: Color.fromARGB(255, 39, 176, 169)),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(7.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image.network(
+                                          "https://media.istockphoto.com/photos/smiling-indian-man-looking-at-camera-picture-id1270067126?b=1&k=20&m=1270067126&s=612x612&w=0&h=tcabRaVlA0bsZhWCDBXxC1IYuGnh7_VuramO-vJ5jRs=",
+                                          fit: BoxFit.cover),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(width: 25),
-                              Column(
-                                children: [
-                                  Text("@Joviadan"),
-                                  SizedBox(height: 5),
-                                  Text("Jov Daniel"),
-                                  SizedBox(height: 10),
-                                  Text("Ux Designer"),
-                                ],
-                              )
-                            ],
+                                SizedBox(width: 25),
+                                Column(
+                                  children: [
+                                    Text("@Joviadan"),
+                                    SizedBox(height: 5),
+                                    Text("Jov Daniel"),
+                                    SizedBox(height: 10),
+                                    Text("Ux Designer"),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 15, 0, 0),
-                          child: Text("About me"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 60),
-                          child: Text('Madison blackstone is the director of  '
-                              'user experience design with '
-                              'experience managing global teams.'),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 15, 0, 0),
+                            child: Text("About me"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 60),
+                            child: Text('Madison blackstone is the director of  '
+                                'user experience design with '
+                                'experience managing global teams.'),
+                          ),
+                        ],
+                      ))),
+                      BlueCard()
                       ],
-                    ))),
-                    BlueCard()
-                    ],
+            ),
           ),
-        ),
-        PostDisplay()
-//        Container(
-//   decoration: BoxDecoration(
-//     color: Colors.blueGrey,
-//     borderRadius: BorderRadius.only(
-//       topLeft: Radius.circular(20),
-//       topRight: Radius.circular(20),
-//     ),
-//   ),
-//   width:500,
-//   height: 170,
-// )
-
-               ]),
-    ));
+          PostDisplay()
+    //        Container(
+    //   decoration: BoxDecoration(
+    //     color: Colors.blueGrey,
+    //     borderRadius: BorderRadius.only(
+    //       topLeft: Radius.circular(20),
+    //       topRight: Radius.circular(20),
+    //     ),
+    //   ),
+    //   width:500,
+    //   height: 170,
+    // )
+    
+                 ]),
+      )),
+    );
   
   }
 }
