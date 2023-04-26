@@ -14,26 +14,34 @@ class PostDisplay extends StatelessWidget {
           ),
         ),
         width: MediaQuery.of(context).size.width * 1,
-        height: MediaQuery.of(context).size.height * 0.38,
+        height: MediaQuery.of(context).size.height * 0.4305,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(50, 30, 40, 0),
-              child: Row(
-                
-                children: [
-                  const Text(
-                    "My Posts",
-                    style: TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  
+                  children: [
+                    Text(
+                      "My Posts",
+                      style: TextStyle(
+                        fontSize: 22.0 * MediaQuery.textScaleFactorOf(context),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  const Icon(Icons.menu),
-                  SizedBox(width: MediaQuery.of(context).size.width * 0.05),
-                  const Icon(Icons.menu)
-                ],
+                    const Spacer(),
+                    IconButton(
+  icon: Icon(Icons.view_sidebar),
+  onPressed: () {
+    // Do something when the user presses the button
+  },
+),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                    const Icon(Icons.menu)
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -48,7 +56,7 @@ class PostDisplay extends StatelessWidget {
                           child: Card(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30)),
-                            elevation: 15,
+                            elevation: 10,
                             shadowColor: Colors.grey[500],
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
