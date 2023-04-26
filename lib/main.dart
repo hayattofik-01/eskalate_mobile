@@ -57,20 +57,24 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
+      backgroundColor: Color.fromARGB(255, 247, 240, 240),
+        body: SafeArea(
       child:Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Profile"),
+            Text("Profile",
+            style:TextStyle(
+              fontSize: 18,fontWeight:FontWeight.bold
+            )),
             SizedBox(width: 30),
             Icon(Icons.more_horiz)
           ],
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(60.0, 20.0, 60.0, 50.0),
+          padding: const EdgeInsets.fromLTRB(35.0, 20.0, 35.0, 65.0),
           child: Stack(
-            clipBehavior: Clip.none,
+            clipBehavior: Clip.none ,
             children: [Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
@@ -85,12 +89,12 @@ class _ProfilePageState extends State<ProfilePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Container(
-                                height: 90,
-                                width: 90,
+                                height: MediaQuery.of(context).size.height * 0.11,
+                                width: MediaQuery.of(context).size.width * 0.22,
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                       //<-- SEE HERE
-                                      width: 5,
+                                      width: MediaQuery.of(context).size.width * 0.007,
                                       color: Color.fromARGB(255, 39, 176, 169)),
                                   borderRadius: BorderRadius.circular(30),
                                 ),
@@ -123,9 +127,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20.0, 15, 20, 60),
-                          child: Text('This is a paragraph of text. '
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                              'Suspendisse potenti. Aenean dapibus sapien maximus, venenatis velit non, eleifend massa. '),
+                          child: Text('Madison blackstone is the director of  '
+                              'user experience design with '
+                              'experience managing global teams.'),
                         ),
                       ],
                     ))),
@@ -151,3 +155,5 @@ class _ProfilePageState extends State<ProfilePage> {
   
   }
 }
+ 
+  
